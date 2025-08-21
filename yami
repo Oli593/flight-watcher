@@ -1,0 +1,14 @@
+name: Test Telegram
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-telegram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar mensaje de prueba a Telegram
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+          -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+          -d text="¡Hola! Este es un mensaje de prueba desde GitHub Actions ✅"
