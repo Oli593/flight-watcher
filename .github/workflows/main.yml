@@ -1,0 +1,25 @@
+.github/workflows/flight-watcher.yml
+name: Flight Watcher
+
+on:
+  schedule:
+    # Ejecuta el workflow cada 12 horas
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-flights:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener información de vuelos
+        run: |
+          # Aquí va tu script para consultar precios con la API de Kiwi/Tequila
+          # Por ejemplo, podrías guardar la respuesta en un archivo flights.json
+          echo "Simulando búsqueda de vuelos..."
+
+      - name: Enviar alerta a Telegram si hay precio bajo
+        run: |
+          # Ejemplo de mensaje de alerta
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+          -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+          -d text="✈️ ¡Alerta! Se encontró un vuelo barato: Guayaquil → Lisboa. Fecha: 03/09/2025 - 08/02/2026"
