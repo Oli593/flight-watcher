@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuaderno Financiero Bíblico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>📖 Cuaderno Financiero Bíblico</h1>
+    <p>Organiza tus finanzas con principios de la Palabra de Dios</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>✍️ Metas del Mes</h2>
+      <textarea placeholder="Escribe aquí tus metas financieras..."></textarea>
+    </section>
+
+    <section>
+      <h2>📊 Ingresos y Gastos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th>Ingreso</th>
+            <th>Gasto</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-datos"></tbody>
+      </table>
+      <button onclick="agregarFila()">➕ Agregar fila</button>
+    </section>
+
+    <section>
+      <h2>📖 Versículo del Día</h2>
+      <p id="versiculo"></p>
+      <button onclick="nuevoVersiculo()">🔄 Otro versículo</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Creado con 💛 basado en la Palabra de Dios</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
